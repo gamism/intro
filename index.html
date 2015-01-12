@@ -19,28 +19,28 @@
 		  body {
 			  position: relative;
 		  }
-		  .nav > .active {
+		  .nav > .active > a {
 			  font-weight: bold;
 		  }
 	  </style>
   </head>
   <body>
   <div class="row">
-	  <div class="col-xs-4 col-sm-4 col-md-4">
+	  <div class="col-xs-4 col-sm-2 col-md-2">
 		  <div class="nav navbar-fixed-top">
 			  <div class="panel-body">
 				  <div class="navbar-example">
 					  <ul class="nav nav-stacked">
-						  <li><a style='' href='#helloworld'>hello world</a></li>
-						  <li><a style='' href='#profile'>profile</a></li>
-						  <li><a style='' href='#message'>message</a></li>
+						  <li><a style='' href='#helloworld'><span class="glyphicon glyphicon glyphicon-home"></span> hello world</a></li>
+						  <li><a style='' href='#profile'><span class="glyphicon glyphicon glyphicon-user"></span> profile</a></li>
+						  <li><a style='' href='#message'><span class="glyphicon glyphicon glyphicon-list"></span> message</a></li>
 					  </ul>
 				  </div>
 			  </div>
 		  </div>
 	  </div>
-	  <div class="col-xs-8 col-sm-8 col-md-8">
-		  <div>
+	  <div class="col-xs-8 col-sm-10 col-md-10">
+		  <div style="border-left: solid 1px gray; padding-left: 15px;">
 			  <span id="helloworld"></span>
 			  <h1>hello world
 				  <small>nice to meet you</small>
@@ -68,6 +68,10 @@
     <script src="js/bootstrap.min.js"></script>
   <script>
 	  $('body').scrollspy({ target: '.navbar-example'});
+	  $('.navbar-example').on('activate.bs.scrollspy', function()
+	  {
+//		  console.log('this ', $(this));
+	  });
   </script>
   </body>
 </html>
